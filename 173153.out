@@ -1,0 +1,57 @@
+Sender: LSF System <lsfadmin@c09n14>
+Subject: Job 173153: <testsc> in cluster <hpcluster1> Done
+
+Job <testsc> was submitted from host <h01> by user <yangsc> in cluster <hpcluster1> at Mon Nov 25 15:53:01 2019
+Job was executed on host(s) <8*c09n14>, in queue <gold2>, as user <yangsc> in cluster <hpcluster1> at Mon Nov 25 15:53:02 2019
+</share/home/yangsc> was used as the home directory.
+</share/home/yangsc/Documents/parallel_test> was used as the working directory.
+Started at Mon Nov 25 15:53:02 2019
+Terminated at Mon Nov 25 15:53:12 2019
+Results reported at Mon Nov 25 15:53:12 2019
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -J testsc
+#BSUB -q gold2
+#BSUB -n 8
+#BSUB -o %J.out
+#BSUB -e %J.err
+#BSUB -a python 
+#BSUB -R span[ptile=8]
+python ./testsc.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   10.75 sec.
+    Max Memory :                                 19 MB
+    Average Memory :                             19.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   9 sec.
+    Turnaround time :                            11 sec.
+
+The output (if any) follows:
+
+cores = 40
+8
+[8.26445371901227e+151, 3.305781487604908e+152, 7.438008347111043e+152, 1.3223125950419632e+153, 2.066113429753068e+153, 2.9752033388444173e+153, 4.049582322316012e+153, 5.289250380167853e+153]
+One core costs 4.84s
+
+[8.26445371901227e+151, 3.305781487604908e+152, 7.438008347111043e+152, 1.3223125950419632e+153, 2.066113429753068e+153, 2.9752033388444173e+153, 4.049582322316012e+153, 5.289250380167853e+153]
+Multi cores cost 0.85s
+
+
+
+PS:
+
+Read file <173153.err> for stderr output of this job.
+
