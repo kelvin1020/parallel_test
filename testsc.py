@@ -4,7 +4,8 @@ import numpy as np
 import sys
 import time 
 
-def f(x):
+def f(a):
+    x = np.arange(0, 1e6, 1) * a
     return x*x
 
 if __name__ == '__main__':
@@ -12,7 +13,7 @@ if __name__ == '__main__':
     print("cores = %d"%core)
     # print("version ", sys.version)
 
-    a = np.arange(0, 1e7, 1)
+    a = range(1, 8)
     print(a)
 
     ta1 = time.time()
