@@ -5,7 +5,7 @@ import sys
 import time 
 
 def f(a):
-    x = np.arange(0, 1e7, 1) * a
+    x = np.sum(np.arange(0, 1e7, 1)**10) * a
     return x*x
 
 if __name__ == '__main__':
@@ -15,20 +15,25 @@ if __name__ == '__main__':
 
     a = range(1, 8 + 1)
     print(len(a))
-
+    b1 = [];
     ta1 = time.time()
-    with Pool(1) as pool1:
-        b = pool1.map(f,a)
+    for i in a:
+        b1.append(f(i)) 
+   
     tb1 = time.time()
 
 
     ta2 = time.time()
     with Pool() as pool2:
-        b = pool2.map(f,a)
+        b2 = pool2.map(f,a)
+       
     tb2 = time.time()
 
-    print("One core costs %4.2fs"%(tb1 - ta1))
-    print("Multi cores cost %4.2fs"%(tb2 - ta2))
+    print(b1) 
+    print("One core costs %4.2fs\n"%(tb1 - ta1))
+
+    print(b2) 
+    print("Multi cores cost %4.2fs\n"%(tb2 - ta2))
 
     with open("cost.txt", 'w') as f:
         print("One core costs %4.2fs"%(tb1 - ta1), file = f)
