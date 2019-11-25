@@ -5,7 +5,7 @@ import sys
 import time 
 
 def f(a):
-    x = np.arange(0, 1e6, 1) * a
+    x = np.arange(0, 1e7, 1) * a
     return x*x
 
 if __name__ == '__main__':
@@ -13,8 +13,8 @@ if __name__ == '__main__':
     print("cores = %d"%core)
     # print("version ", sys.version)
 
-    a = range(1, 8)
-    print(a)
+    a = range(1, 8 + 1)
+    print(len(a))
 
     ta1 = time.time()
     with Pool(1) as pool1:
