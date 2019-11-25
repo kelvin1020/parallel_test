@@ -5,4 +5,4 @@
 #BSUB -e %J.err
 #BSUB -a python 
 #BSUB -R span[ptile=8]
-mpirun python ./testsc.py
+python ./testsc.py

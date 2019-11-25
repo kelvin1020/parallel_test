@@ -1,0 +1,2 @@
+One core costs 1.77s
+Multi cores cost 1.61s
