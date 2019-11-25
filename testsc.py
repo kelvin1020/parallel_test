@@ -12,21 +12,26 @@ if __name__ == '__main__':
     print("cores = %d"%core)
     # print("version ", sys.version)
 
-    a = np.arange(0, 5e6, 1)
+    a = np.arange(0, 1e7, 1)
     print(a)
 
-    ta = time.time()
+    ta1 = time.time()
     with Pool(1) as pool:
         b = pool.map(f,a)
-    tb = time.time()
-    print("One core costs %4.2fs"%(tb - ta))
+    tb1 = time.time()
 
 
-    ta = time.time()
+    ta2 = time.time()
     with Pool() as pool:
         b = pool.map(f,a)
-    tb = time.time()
-    print("Multi cores cost %4.2fs"%(tb - ta))
+    tb2 = time.time()
+
+    print("One core costs %4.2fs"%(tb1 - ta1))
+    print("Multi cores cost %4.2fs"%(tb2 - ta2))
+
+    with open("cost.txt", 'w') as f:
+        print("One core costs %4.2fs"%(tb1 - ta1), file = f)
+        print("Multi cores cost %4.2fs"%(tb2 - ta2) , file = f)
 
 
 
