@@ -16,14 +16,14 @@ if __name__ == '__main__':
     print(a)
 
     ta1 = time.time()
-    with Pool(1) as pool:
-        b = pool.map(f,a)
+    with Pool(1) as pool1:
+        b = pool1.map(f,a)
     tb1 = time.time()
 
 
     ta2 = time.time()
-    with Pool() as pool:
-        b = pool.map(f,a)
+    with Pool() as pool2:
+        b = pool2.map(f,a)
     tb2 = time.time()
 
     print("One core costs %4.2fs"%(tb1 - ta1))
