@@ -39,10 +39,10 @@ ta = time.time()
 n = 10
 
 for i in range(1, n):
-    with open("prime.txt", "a") as f:
+    with open("primeCal.txt", "a") as f:
         print(calPrime(i), file = f)
 
 tb = time.time()
-with open("prime.txt", "a") as f:
+with open("primeCal.txt", "a") as f:
         print("#The program costs %4.2fs"%(tb - ta), file = f)
 

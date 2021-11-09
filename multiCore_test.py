@@ -35,7 +35,7 @@ if __name__ == '__main__':
     print(b2) 
     print("Multi cores cost %4.2fs\n"%(tb2 - ta2))
 
-    with open("testsc.txt", 'w') as f:
+    with open("multiCore.txt", 'w') as f:
         print("One core costs %4.2fs"%(tb1 - ta1), file = f)
         print("Multi cores cost %4.2fs"%(tb2 - ta2) , file = f)
 
